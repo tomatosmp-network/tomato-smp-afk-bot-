@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TOMATO SMP BOT</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header-card">
+      <div class="title-group">
+        <h1>TOMATO SMP BOT</h1>
+        <p class="server-address" id="server-address">TomatoSMP.aternos.me:35074 • TomatoAFK</p>
+      </div>
+      <button id="btn-refresh-ping" type="button" class="btn-outline">Check Server</button>
+    </header>
+
+    <!-- Two Separate Status Indicators + Uptime -->
+    <section class="status-grid">
+      <div class="card status-card">
+        <span class="label">SERVER STATUS</span>
+        <div class="status-row">
+          <span id="server-dot" class="dot dot-red"></span>
+          <strong id="server-status-text" class="status-value text-red">OFFLINE</strong>
+        </div>
+        <span id="server-subtext" class="subtext">Checking Aternos server...</span>
+      </div>
+
+      <div class="card status-card">
+        <span class="label">BOT STATUS</span>
+        <div class="status-row">
+          <span id="bot-dot" class="dot dot-red"></span>
+          <strong id="bot-status-text" class="status-value text-red">DISCONNECTED</strong>
+        </div>
+        <span id="bot-subtext" class="subtext">Bot: TomatoAFK</span>
+      </div>
+
+      <div class="card status-card">
+        <span class="label">UPTIME COUNTER</span>
+        <strong id="uptime-text" class="status-value mono">00:00:00</strong>
+        <span id="reconnect-subtext" class="subtext">Counts only real connected time</span>
+      </div>
+    </section>
+
+    <!-- Large Bot Controls Card -->
+    <section class="card controls-card">
+      <div class="buttons-row">
+        <button id="btn-start" type="button" class="btn-large btn-start">START BOT</button>
+        <button id="btn-stop" type="button" class="btn-large btn-stop" disabled>STOP BOT</button>
+      </div>
+
+      <div class="autoreconnect-row">
+        <label for="toggle-autoreconnect" class="toggle-label">
+          <input id="toggle-autoreconnect" type="checkbox" checked />
+          <span>AUTO RECONNECT (15s Interval)</span>
+        </label>
+        <span id="stream-indicator" class="stream-badge">LIVE SSE</span>
+      </div>
+    </section>
+
+    <!-- Live Console Card -->
+    <section class="card console-card">
+      <div class="console-header">
+        <h2>LIVE CONSOLE</h2>
+        <button id="btn-clear-logs" type="button" class="btn-outline">Clear</button>
+      </div>
+      <div id="console-box" class="console-box" aria-live="polite">
+        <div class="log-item log-info">[SYSTEM] Connecting to live backend stream...</div>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
